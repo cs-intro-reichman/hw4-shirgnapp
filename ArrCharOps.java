@@ -209,10 +209,10 @@ public class ArrCharOps {
         if (str1.length() == str2.length()) {
             for(int j=0; j<str1.length(); j++) {
                 if (str1.charAt(j) - 32 == str2.charAt(j)) {
-                    return -1;
+                    return 1;
                 }
                 if (str2.charAt(j) - 32 == str1.charAt(j)) {
-                    return 1;
+                    return -1;
                 }
                 if (j == str1.length() -1) {
                     return 0;
