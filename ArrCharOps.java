@@ -15,6 +15,7 @@ public class ArrCharOps {
         System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("aBc", "abc"));
+        System.out.println(compareTo("abc", "aBc"));
         System.out.println(compareTo("abw", "abcd"));
         System.out.println(compareTo("abc", "abc"));
         System.out.println(compareTo("abc", "aBc"));
@@ -211,7 +212,7 @@ public class ArrCharOps {
                     return -1;
                 }
                 if (str2.charAt(j) - 32 == str1.charAt(j)) {
-                    return -1;
+                    return 1;
                 }
                 if (j == str1.length() -1) {
                     return 0;
