@@ -20,6 +20,8 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
+        System.out.println(compareTo("Zooh", "zoo"));
+        System.out.println(compareTo("bana", "hana"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
     }
@@ -186,11 +188,14 @@ public class ArrCharOps {
                     return -1;
                 }
             }
-            if (str1.length() == str2.length() && i==length) {
-                return 0;
-            }
         }
-
+        if (str1.length() == str2.length()) {
+            for(int j=0; j<str1.length(); j++) {
+                if (j == str1.length() -1) {
+                    return 0;
+                }
+            }
+           }
         return -2;
     }
 }
