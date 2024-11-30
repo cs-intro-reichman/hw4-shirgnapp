@@ -14,16 +14,18 @@ public class ArrCharOps {
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
+        System.out.println(compareTo("aBc", "abc"));
         System.out.println(compareTo("abw", "abcd"));
-        System.out.println(compareTo("Abcd", "a"));
-        System.out.println(compareTo("apple", "banana"));
+        System.out.println(compareTo("abc", "abc"));
+        System.out.println(compareTo("abc", "aBc"));
+        System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(compareTo("Zooh", "zoo"));
         System.out.println(compareTo("bana", "hana"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+       
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -205,11 +207,17 @@ public class ArrCharOps {
     }
         if (str1.length() == str2.length()) {
             for(int j=0; j<str1.length(); j++) {
+                if (str1.charAt(j) - 32 == str2.charAt(j)) {
+                    return -1;
+                }
+                if (str2.charAt(j) - 32 == str1.charAt(j)) {
+                    return -1;
+                }
                 if (j == str1.length() -1) {
                     return 0;
                 }
             }
            }
-        return 2;
+        return -2;
     }
 }
