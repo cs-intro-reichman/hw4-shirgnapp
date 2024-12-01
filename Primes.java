@@ -24,6 +24,9 @@ public class Primes {
                 if (Prime[t] == true) {
                     System.out.println(t);
                     total++;
+                    if (t == n-1) {
+                        System.out.println(t+1);
+                    }
                 }
             }
             int p = 0;
