@@ -13,14 +13,14 @@ public class Primes {
                     Prime[s] = false;
                 }
             }
-                if ( i ==2 ) 
+                if (i ==2 ) 
                     i++;
                 else
-                i+=2;
+                     i+=2;
             }
             Prime[2] = true;
             Prime[3] = true;
-            int total = 0;
+            int total = 1;
             for(int t = 0; t<n; t++) {
                 if (Prime[t] == true) {
                     System.out.println(t);
