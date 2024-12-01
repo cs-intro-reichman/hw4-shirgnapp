@@ -31,7 +31,7 @@ public class Primes {
             }
             int p = 0;
             p = (total * 100) / n;
-            System.out.println("There are " + total + " primes between 2 and " + n + " ( " + p + "% are primes)");
+            System.out.println("There are " + total + " primes between 2 and " + n + " (" + p + "% are primes)");
         }
         
     }
