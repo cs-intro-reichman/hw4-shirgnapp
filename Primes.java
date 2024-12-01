@@ -9,17 +9,17 @@ public class Primes {
         int i=2;
         while (i < Math.sqrt(n)){ 
             for(int s=0; s<n; s++){
-                if (s % i == 0) {
+                if (s % i == 0 && i != s ) {
                     Prime[s] = false;
                 }
             }
                 if ( i ==2 ) 
                     i++;
-                
                 else
                 i+=2;
             }
             Prime[2] = true;
+            Prime[3] = true;
             int total = 0;
             for(int t = 0; t<n; t++) {
                 if (Prime[t] == true) {
