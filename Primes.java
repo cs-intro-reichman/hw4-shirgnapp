@@ -26,6 +26,7 @@ public class Primes {
                     Prime[n-1] = false;
                 }
             }
+            System.out.println("Prime numbers up to " + n + ":");
             for(int t = 0; t<n; t++) {
                 if (Prime[t] == true) {
                     if (t == n-1) {
