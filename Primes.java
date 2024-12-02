@@ -7,31 +7,41 @@ public class Primes {
             Prime[j] = true;
         }
         int i=2;
-        while (i < Math.sqrt(n)){ 
+        while (i <= Math.sqrt(n) ){ 
             for(int s=0; s<n; s++){
-                if (s % i == 0 && s > i ) {
+                if (s % i == 0 &&  s > i ) {
                     Prime[s] = false;
                 }
             }
-                if (i ==2 ) 
+                if (i == 2) 
                     i++;
                 else
                      i+=2;
             }
             Prime[2] = true;
-            int total = 1;
+            int total = 0;
+            Prime[n-1] = true;
+            for(int j=2; j<n; j++){
+                if ( n % j == 0 ) {
+                    Prime[n-1] = false;
+                }
+            }
             for(int t = 0; t<n; t++) {
                 if (Prime[t] == true) {
+                    if (t == n-1) {
+                        System.out.println(n);
+                        total++;
+                    }
+                    else {
                     System.out.println(t);
                     total++;
-                    if (t == n-1) {
-                        System.out.println(t+1);
                     }
                 }
             }
-            int p = 0;
+            int p = 0 ;
             p = (total * 100) / n;
             System.out.println("There are " + total + " primes between 2 and " + n + " (" + p + "% are primes)");
         }
         
     }
+
