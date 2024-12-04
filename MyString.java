@@ -35,7 +35,6 @@ public class MyString {
         }
         return lowString;
     }
-   
 public static int index2(String str1, String str2) {
     for(int i=0; i< str1.length(); i++){
         for(int j=0; j<str2.length(); j++)
@@ -45,46 +44,44 @@ public static int index2(String str1, String str2) {
     }
     return -1;
 }  
-    /** If str1 contains str2, returns true; otherwise returns false. */
-    public static boolean contains(String str1, String str2) {
-            if (str1.length() == str2.length()) {
-                for(int i=0; i<str1.length(); i++){
-                    if (str1.charAt(i) != str2.charAt(i)) {
-                        return false;
-                    }
-                }
-            }
-            if (str1.length() < str2.length()) {
-                return false;
-            }
-            int first = index2(str1, str2);
-            if (str1.length() > str2.length()) {
-                    int i =0;
-                    if(first == -1)
-                    return false;
-                    while (i < str2.length()) {
-                        if (str1.charAt(first) != str2.charAt(i)) {
-                            if (first == str1.length()-1) {
-                                return false;
-                            }
-                            else
-                            first = index2(str1.substring(first+1, str1.length()), str2);
-                        }
-                        if (first == -1) {
-                            return false;
-                        }
-                        i++;
-                        first++;
-                    }
-                }    
-                return true;
-                
-            }
+public static boolean contains(String str1, String str2) {
+    if (str2.length() > str1.length()) {
+        return false;
     }
-
-        
-
-
+    if (str2 == "") {
+        return true;
+    }
+    if (str1.length() == str2.length()) {
+      for(int i=0; i<str1.length(); i++){
+        if (str1.charAt(i) != str2.charAt(i)) {
+            return false;
+        }
+        if (i == str1.length()-1) {
+            return true;            
+        }
+      }
+       }
+    int firstindex = -1; 
+      for(int i=0; i<str1.length(); i++){
+        if (str1.charAt(i) == str2.charAt(0)) {
+            firstindex = i;
+            break;
+        }
+        if (firstindex == -1 && i == str1.length()-1) {
+            return false;
+        }
+      }
+      for(int j = 0; j < str2.length(); j++){ 
+        if (str1.charAt(j + firstindex) != str2.charAt(j)) {
+            return false;
+        }
+        if (str1.charAt(j+firstindex) == str2.charAt(j) && j == str2.length()-1) {
+            return true;
+        }
+      }
+      return false;
+}
+}
 
 
 
